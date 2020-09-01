@@ -45,8 +45,11 @@ mat4 add_m4(mat4 m1, mat4 m2);
 mat4 subtract_m4(mat4 m1, mat4 m2);
 mat4 multiply_m4(mat4 m1, mat4 m2);
 mat4 invert_m4(mat4 m);
+mat4 minor_m4(mat4 m);
+mat4 cofactor_m4(mat4 m);
+float determinant_m4(mat4 minors, mat4 m);
 mat4 transpose_m4(mat4 m);
-mat4 multiply_m4v4(mat4 m, vec4 v);
+vec4 multiply_m4v4(mat4 m, vec4 v);
 
 
 #endif

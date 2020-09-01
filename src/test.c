@@ -63,8 +63,28 @@ int main(void)
 	mat4 prod = multiply_m4(m1, m2);
 	print_m4(prod);
 
+	printf("testmat:\n");
+	mat4 testmat = {{5,2,6,2},{6,2,6,3},{6,2,2,6},{8,8,8,7}};
+	print_m4(testmat);
+	printf("matrix of minor of testmat:\n");
+	mat4 matminor = minor_m4(testmat);
+	print_m4(matminor);
+
+	printf("matrix of cofactor of testmat minors:\n");
+	mat4 matcofactors = cofactor_m4(matminor);
+	print_m4(matcofactors);
+
+	printf("transpose of cofactors of minors of testmat:\n");
+	mat4 tposeTime = transpose_m4(matcofactors);
+	print_m4(tposeTime);
+
+
+	printf("determinant of tposed cofac of minors of testmat:\n");
+	float det = determinant_m4(matminor, testmat);
+	printf("%f\n\n",det);
+
 	printf("m1^-1 (inverse):\n");
-	mat4 inv = invert_m4(m1);
+	mat4 inv = invert_m4(testmat);
 	print_m4(inv);
 
 	printf("m^T (transpose):\n");
@@ -72,8 +92,8 @@ int main(void)
 	print_m4(tpose);
 
 	printf("m1*v1:\n");
-	mat4 vmprod = multiply_m4v4(m1, v1);
-	print_m4(vmprod);
+	vec4 vmprod = multiply_m4v4(m1, v1);
+	print_v4(vmprod);
 
 
 }
