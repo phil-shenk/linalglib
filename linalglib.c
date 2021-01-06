@@ -71,6 +71,27 @@ vec4 cross_v4(vec4 v1, vec4 v2)
 	return result;
 }
 
+/*
+ * project a vector v1 onto a different vector v2
+ * projection = (v1 dot v2_hat) * v2_hat
+ * where v2_hat is normalized v2
+ */
+vec4 project_v4(vec4 v1, vec4 v2)
+{
+	vec4 projection = scale_v4(dot_v4(v1, normalize_v4(v2)), normalize_v4(v2));
+	return projection;
+}
+
+/*
+ * project a vector v onto the plane orthogonal to plane_vec
+ * projected = v - projection of v onto plane_vec
+ */
+vec4 project_onto_plane(vec4 v, vec4 plane_vec)
+{
+	vec4 projection = subtract_v4(v, project_v4(v, plane_vec));
+	return projection;
+}
+
 /********************
  * MATRIX OPERATIONS
  *******************/
