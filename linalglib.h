@@ -37,6 +37,7 @@ float dot_v4(vec4 v1, vec4 v2);
 vec4 cross_v4(vec4 v1, vec4 v2);
 
 vec4 project_v4(vec4 v1, vec4 v2);
+
 vec4 project_onto_plane(vec4 v, vec4 plane_vec);
 
 /* matrix operations */
